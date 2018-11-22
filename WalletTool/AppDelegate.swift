@@ -12,10 +12,11 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var rootViewController: UIViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        self.initWindow()
         return true
     }
 
@@ -42,5 +43,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    func initWindow() {
+        window = UIWindow.init(frame: UIScreen.main.bounds)
+        rootViewController = RootViewController()
+        window?.rootViewController = rootViewController
+        window?.makeKeyAndVisible()
+    }
 }
 

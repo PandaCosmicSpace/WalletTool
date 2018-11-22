@@ -14,6 +14,7 @@
 		4626DC4A21A6D9C50024FBD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4626DC4821A6D9C50024FBD6 /* LaunchScreen.storyboard */; };
 		4626DC5521A6D9C60024FBD6 /* WalletToolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626DC5421A6D9C60024FBD6 /* WalletToolTests.swift */; };
 		4626DC6021A6D9C60024FBD6 /* WalletToolUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626DC5F21A6D9C60024FBD6 /* WalletToolUITests.swift */; };
+		4626DC6E21A6DCF50024FBD6 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4626DC6D21A6DCF50024FBD6 /* RootViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		4626DC5B21A6D9C60024FBD6 /* WalletToolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WalletToolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4626DC5F21A6D9C60024FBD6 /* WalletToolUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletToolUITests.swift; sourceTree = "<group>"; };
 		4626DC6121A6D9C60024FBD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4626DC6D21A6DCF50024FBD6 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				4626DC4621A6D9C50024FBD6 /* Assets.xcassets */,
 				4626DC4821A6D9C50024FBD6 /* LaunchScreen.storyboard */,
 				4626DC4B21A6D9C50024FBD6 /* Info.plist */,
+				4626DC6D21A6DCF50024FBD6 /* RootViewController.swift */,
 			);
 			path = WalletTool;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			files = (
 				4626DC4221A6D9C40024FBD6 /* ViewController.swift in Sources */,
 				4626DC4021A6D9C40024FBD6 /* AppDelegate.swift in Sources */,
+				4626DC6E21A6DCF50024FBD6 /* RootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
