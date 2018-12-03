@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SnapKit
 class RootViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -18,6 +18,9 @@ class RootViewController: UIViewController {
         label.textColor = .black
         label.text = "Hello World"
         view.addSubview(label)
+        label.snp.makeConstraints { (make) in
+            make.center.equalTo(self.view)
+        }
         // Do any additional setup after loading the view.
     }
     
