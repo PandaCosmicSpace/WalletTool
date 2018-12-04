@@ -46,7 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func initWindow() {
         window = UIWindow.init(frame: UIScreen.main.bounds)
         rootViewController = RootViewController()
-        window?.rootViewController = rootViewController
+        let navVC = UINavigationController.init(rootViewController: rootViewController!)
+        window?.rootViewController = navVC
         window?.makeKeyAndVisible()
     }
 }
