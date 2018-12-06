@@ -8,9 +8,10 @@
 
 import UIKit
 
-let SettingCellIdetifier: String = "SettingCellIdetifier"
+let SettingCellPlainIdetifier: String = "SettingCellPlainIdetifier"
+let SettingCellWithSwitchIdetifier: String = "SettingCellWithSwitchIdetifier"
 
-var dataArray:Array<String>?
+var dataArray:Array<CellTypeModel>?
 
 class SettingViewController: UITableViewController {
 
@@ -18,7 +19,8 @@ class SettingViewController: UITableViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         title = "Setting"
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: SettingCellIdetifier)
+        tableView.register(SwitchTableViewCell.self, forCellReuseIdentifier: SettingCellWithSwitchIdetifier)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: SettingCellPlainIdetifier)
         tableView.delegate = self
         tableView.dataSource = self
         initView()
@@ -33,11 +35,37 @@ class SettingViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SettingCellIdetifier, for: indexPath)
-        cell.textLabel?.text = dataArray?[indexPath.row]
+        let cellType = dataArray?[indexPath.row].cellType
+        let identifier = obtainCellIdentifier(cellType: cellType!)
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+        cell.textLabel?.text = dataArray?[indexPath.row].name
         return cell
     }
+    
     func initView() {
-        dataArray = ["use touch ID"]
+        let switchCell = CellTypeModel(name: "Use touch ID", cellType: .CellWithSwitch)
+        dataArray = [switchCell]
     }
+    
+    func obtainCellIdentifier(cellType:CellType) -> String {
+        let identifier : String
+        switch cellType {
+        case .Plain:
+            identifier = SettingCellPlainIdetifier
+        case .CellWithSwitch:
+            identifier = SettingCellWithSwitchIdetifier
+        }
+        return identifier
+    }
+}
+
+struct CellTypeModel {
+    let name :String?
+    var cellType : CellType = .Plain
+}
+
+enum CellType {
+    case CellWithSwitch
+    case Plain
+    
 }
