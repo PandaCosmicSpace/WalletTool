@@ -18,5 +18,6 @@ target 'WalletTool' do
   end
 
 pod 'SnapKit'
+pod 'Toast-Swift'
 
 end

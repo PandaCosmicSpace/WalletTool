@@ -43,8 +43,8 @@ class SettingViewController: UITableViewController {
     }
     
     func initView() {
-        let switchCell = CellTypeModel(name: "Use touch ID", cellType: .CellWithSwitch)
-        dataArray = [switchCell]
+        let switchCellModel = CellTypeModel(name: "Use touch ID", cellType: .CellWithSwitch)
+        dataArray = [switchCellModel]
     }
     
     func obtainCellIdentifier(cellType:CellType) -> String {

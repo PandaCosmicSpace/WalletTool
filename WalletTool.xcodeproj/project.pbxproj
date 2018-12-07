@@ -23,6 +23,8 @@
 		46357AC121B6B40900A8F87F /* VirtualCurrencyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46357AC021B6B40900A8F87F /* VirtualCurrencyCollectionViewCell.swift */; };
 		46357AC521B6B47F00A8F87F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46357AC421B6B47F00A8F87F /* SettingViewController.swift */; };
 		46357AC721B6B4B500A8F87F /* WalletCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46357AC621B6B4B500A8F87F /* WalletCollectionViewController.swift */; };
+		8DD0D74D21BAAC1000CE56DE /* UserPasswordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD0D74C21BAAC1000CE56DE /* UserPasswordManager.swift */; };
+		8DD0D74F21BAB92600CE56DE /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD0D74E21BAB92600CE56DE /* LocalAuthentication.framework */; };
 		AE1751F89BDD4831902A281F /* Pods_WalletTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DDD85923240AC0E5C5E6AE /* Pods_WalletTool.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,8 @@
 		5A261C7203F1BC8817154861 /* Pods-WalletTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalletTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WalletTool/Pods-WalletTool.debug.xcconfig"; sourceTree = "<group>"; };
 		7F1123809B67AFAE6F248DC3 /* Pods-WalletTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalletTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-WalletTool/Pods-WalletTool.release.xcconfig"; sourceTree = "<group>"; };
 		84AD4B7B78A130144FA1B16F /* Pods_WalletToolUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalletToolUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DD0D74C21BAAC1000CE56DE /* UserPasswordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPasswordManager.swift; sourceTree = "<group>"; };
+		8DD0D74E21BAB92600CE56DE /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		990FACC93715FF8DD01F7DC9 /* Pods-WalletToolUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalletToolUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WalletToolUITests/Pods-WalletToolUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BDCBD4017AB46CDF609736D5 /* Pods-WalletToolTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WalletToolTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WalletToolTests/Pods-WalletToolTests.release.xcconfig"; sourceTree = "<group>"; };
 		C6DDD85923240AC0E5C5E6AE /* Pods_WalletTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WalletTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DD0D74F21BAB92600CE56DE /* LocalAuthentication.framework in Frameworks */,
 				AE1751F89BDD4831902A281F /* Pods_WalletTool.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,6 +143,7 @@
 				4626DC4821A6D9C50024FBD6 /* LaunchScreen.storyboard */,
 				4626DC4B21A6D9C50024FBD6 /* Info.plist */,
 				461CC18F21B8F12D007C0D92 /* UserDefaultsKeys.swift */,
+				8DD0D74C21BAAC1000CE56DE /* UserPasswordManager.swift */,
 			);
 			path = WalletTool;
 			sourceTree = "<group>";
@@ -190,6 +196,7 @@
 		5B8DFC77953D357451C4032E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8DD0D74E21BAB92600CE56DE /* LocalAuthentication.framework */,
 				C6DDD85923240AC0E5C5E6AE /* Pods_WalletTool.framework */,
 				4CB270CFFC6D12CC0B8F9619 /* Pods_WalletToolTests.framework */,
 				84AD4B7B78A130144FA1B16F /* Pods_WalletToolUITests.framework */,
@@ -403,10 +410,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WalletTool/Pods-WalletTool-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -423,6 +432,7 @@
 				46357AC721B6B4B500A8F87F /* WalletCollectionViewController.swift in Sources */,
 				461CC18E21B8E82F007C0D92 /* SwitchTableViewCell.swift in Sources */,
 				4626DC4221A6D9C40024FBD6 /* ViewController.swift in Sources */,
+				8DD0D74D21BAAC1000CE56DE /* UserPasswordManager.swift in Sources */,
 				46357ABE21B6B36800A8F87F /* VirtualCurrencyCollectionViewController.swift in Sources */,
 				461CC19021B8F12D007C0D92 /* UserDefaultsKeys.swift in Sources */,
 				46357AC121B6B40900A8F87F /* VirtualCurrencyCollectionViewCell.swift in Sources */,

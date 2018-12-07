@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        self.initWindow()
+        initWindow()
+        initState()
         return true
     }
 
@@ -49,6 +51,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navVC = UINavigationController.init(rootViewController: rootViewController!)
         window?.rootViewController = navVC
         window?.makeKeyAndVisible()
+    }
+    
+    func initState() {
+        UserPasswordManager.sharedManager
+        ToastManager.shared.duration = 1.5
+        ToastManager.shared.position = .center
     }
 }
 
